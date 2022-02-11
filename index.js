@@ -5,6 +5,14 @@ const mongoose = require("mongoose");
 
 const NoteModel = require("./models/Notes")
 
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3001;
+};
+
+
+
 mongoose.connect("mongodb+srv://admin-beata:mleczyk123@cluster0.yu0at.mongodb.net/keeper?retryWrites=true&w=majority")
 
 
@@ -47,10 +55,7 @@ app.post("/deleteNote", async (req, res)=> {
 })
 
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3001;
-};
+
 
 app.listen(port, function() {
     console.log("Server has started succesfully");
