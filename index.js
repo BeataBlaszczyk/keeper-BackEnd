@@ -93,6 +93,7 @@ app.post("/login", async (req, res)=> {
  
     UserModel.findOne({username: user.username}, (err, result)=> {
         
+        if (!user.password===""){
         if(!result){
            res.json("This user does not exist")
         }
@@ -106,8 +107,9 @@ app.post("/login", async (req, res)=> {
 
 
             
+        }}else{
+            res.json(result)
         }
-
     })
     
 
