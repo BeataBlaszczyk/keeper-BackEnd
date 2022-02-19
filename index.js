@@ -53,6 +53,7 @@ app.post("/createNote", async (req, res)=> {
 
 
 app.post("/changeColor", async (req, res)=> {
+    console.log("klik")
     const color = req.body.color
     const user = req.body.user
     
