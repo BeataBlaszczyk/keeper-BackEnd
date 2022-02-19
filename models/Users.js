@@ -1,8 +1,9 @@
 const mongoose = require("mongoose")
 
 const UserSchema = {
-    name:String,
-    email: String,
+    username:String,
+    password: String,
+    color: String
     
 }
 
